@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Records</title>
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Image</th>
+        <th>Product Price</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+
+{% for catalogue in catalogues %}
+    <tr>
+        <td>{{ catalogue.id }}</td>
+        <td>{{ catalogue.product_name }}</td>
+        <td>{{ catalogue.product_image }}</td>
+        <td>{{ catalogue.product_price }}</td>
+        <td>
+            <a href="/edit/{{ catalogue.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a href="/delete/{{ catalogue.id }}">Delete</a>
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<center><a href="/cat" class="btn btn-primary">Add New Record</a></center>
+</body>
+</html>
