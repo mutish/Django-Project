@@ -3,7 +3,7 @@ from catalogue.forms import CatalogueForm
 from catalogue.models import Catalogue
 
 # Create your views here.
-def cat(request):
+def new(request):
     if request.method == "POST":
         form = CatalogueForm(request.POST)
         if form.is_valid():
@@ -14,7 +14,7 @@ def cat(request):
                 pass
         else:
             form = CatalogueForm()
-        return render(request, 'index.html',{'form': form})
+        return render(request, 'index.html', {'form': form})
 
 def show(request):
     catalogues = Catalogue.objects.all()

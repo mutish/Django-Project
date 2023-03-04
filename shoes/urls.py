@@ -4,7 +4,7 @@ from catalogue import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cat', views.cat),
+    path('new', views.new),
     path('show', views.show),
     path('edit/<int:id>', views.edit),
     path('update/<int:id>', views.update),
