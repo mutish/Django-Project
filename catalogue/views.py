@@ -9,7 +9,7 @@ def new(request):
         if form.is_valid():
             try:
                 form.save()
-                return redirect('/show')
+                return redirect('/new')
             except:
                 pass
         else:
